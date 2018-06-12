@@ -1,13 +1,15 @@
-# Welcome to Defold
+# Blurred text example
 
-This project was created from the "empty" project template.
+The example uses the Rich Text library. It creates three sets of text:
 
-The settings in ["game.project"](defold://open?path=/game.project) are all the default. A bootstrap empty ["main.collection"](defold://open?path=/main/main.collection) is included.
+1. TOP: Regular distance field font. Size 24.
+2. MIDDLE: Same distance field font, but with a special material/shader that blurs it. It requires some outline added to the font to make room for the blur.
+3. BOTTOM: Bitmap font (created with bmGlyph) manually blurred in photoshop. Extra padding added to the glyphs to make room for the blur.
 
-Check out [the documentation pages](https://defold.com/learn) for examples, tutorials, manuals and API docs.
+## Notes
 
-If you run into trouble, help is available in [our forum](https://forum.defold.com).
-
-Happy Defolding!
+* The outline and padding affects the metrics of the text. This may be possible to fix with a negative padding parameter added to the Rich Text library.
+* The special shader blur is expensive. For large text additional sample points need to be added. It currently samples a box of 49 pixels. If the text is small fewer sample points can be used.
+* The manually blurred bitmap font is super cheap!
 
 ---
