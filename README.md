@@ -9,7 +9,8 @@ The example uses the Rich Text library. It creates three sets of text:
 ## Notes
 
 * The outline and padding affects the metrics of the text. This may be possible to fix with a negative padding parameter added to the Rich Text library.
-* The special shader blur is expensive. For large text additional sample points need to be added. It currently samples a box of 49 pixels. If the text is small fewer sample points can be used.
+* The special shader blur is expensive. For large text additional sample points need to be added. It currently samples a box of 49 pixels for each fragment! If the text is small fewer sample points should be used. The shader can be tweaked according to the text size used.
+* The special shader font cannot be used with an outline. To make that work the font needs to be rendered in a separate pass. It may also be possible to make the blur operation cheaper with a multi-pass blur.
 * The manually blurred bitmap font is super cheap!
 
 ---
