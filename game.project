@@ -1,0 +1,14 @@
+[bootstrap]
+main_collection = /main/main.collectionc
+
+[script]
+shared_state = 1
+
+[project]
+title = blurred-font
+dependencies = https://github.com/britzl/defold-richtext/archive/master.zip
+
+[display]
+width = 1280
+height = 768
+

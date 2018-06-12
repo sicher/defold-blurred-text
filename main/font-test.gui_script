@@ -1,0 +1,11 @@
+local richtext = require "richtext.richtext"
+
+function init(self)
+	local text = "<size=2>Large text</size>\nA single line text with a dash of <color=red>color</color>\nBy default left aligned."
+	local top = vmath.vector3(400, 700, 0)
+	local mid = vmath.vector3(400, 500, 0)
+	local low = vmath.vector3(400, 300, 0)
+	richtext.create(text, "regular", { position = top })
+	richtext.create(text, "blurred", { position = mid })
+	richtext.create(text, "blurred-bm", { position = low })
+end
